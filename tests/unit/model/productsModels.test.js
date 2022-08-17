@@ -4,8 +4,8 @@ const sinon = require('sinon');
 const connection = require('../../../models/connection');
 const productsModel = require('../../../models/productsModel');
 
-describe('Busca todos os produtos no Bd', () => {
-  describe('quando se chama o  get do /products', () => {
+describe('testando a Camada model', () => {
+  describe('quando se chama todos os produtos', () => {
     const data = [[
       { id: 1, name: "Martelo de Thor" },
       { id: 2, name: "Traje de encolhimento" },

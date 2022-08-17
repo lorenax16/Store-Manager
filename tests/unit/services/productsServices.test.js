@@ -4,7 +4,7 @@ const { expect } = require("chai");
 const productsServices = require('../../../services/productsService');
 const productsModel = require('../../../models/productsModel');
 
-describe('trabalhando os testes do products', () => {
+describe('testando a Camada Service', () => {
   describe('todos as products no BD', () => {
     const data = [[
       { id: 1, name: "Martelo de Thor" },
