@@ -11,6 +11,12 @@ const getAllFuctions = {
     WHERE id=? ORDER BY id;`, [id]);
     return products;
   },
+
+  add: async (name) => {
+    const [result] = await connection
+      .execute('INSERT INTO StoreManager.products(name) VALUES (?);', [name]);
+    return result;
+  },
 };
 
 module.exports = getAllFuctions;

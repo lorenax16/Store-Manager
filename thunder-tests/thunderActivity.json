@@ -8,9 +8,28 @@
     "method": "GET",
     "sortNum": 0,
     "created": "2022-08-16T13:22:44.559Z",
-    "modified": "2022-08-16T13:27:29.871Z",
+    "modified": "2022-08-17T12:40:37.125Z",
     "headers": [],
     "params": [],
+    "tests": []
+  },
+  {
+    "_id": "c0e4e91c-b629-4a20-a1ff-68ed6bfe8848",
+    "colId": "history",
+    "containerId": "",
+    "name": "http://localhost:3000/products",
+    "url": "http://localhost:3000/products",
+    "method": "POST",
+    "sortNum": 0,
+    "created": "2022-08-17T12:41:55.574Z",
+    "modified": "2022-08-17T12:50:34.962Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": "{\n  \"name\": \"viuda\"\n}",
+      "form": []
+    },
     "tests": []
   }
 ]

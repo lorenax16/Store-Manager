@@ -24,6 +24,16 @@ const productsContoller = {
       return res.status(500).json({ message: ERROR_MESSAGE });
     }
   },
+  add: async (req, res) => {
+    const { name } = req.body;
+    try {
+      const newProduct = await productsService.add(name);
+      console.log(newProduct);
+      return res.status(201).json({ id: newProduct.insertId, name });
+    } catch (error) {
+      return res.status(500).json({ message: ERROR_MESSAGE });
+    }
+  },
 };
 
 module.exports = productsContoller;
