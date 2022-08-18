@@ -8,14 +8,15 @@ const getAllFuctions = {
 
   getById: async (id) => {
     const [[products]] = await connection.execute(`SELECT * FROM StoreManager.products
-    WHERE id=? ORDER BY id;`, [id]);
+    WHERE id=? ;`, [id]);
+    // console.log(products);
     return products;
   },
 
   add: async (name) => {
     const [result] = await connection
       .execute('INSERT INTO StoreManager.products(name) VALUES (?);', [name]);
-    return result;
+    return { id: result.insertId, name };
   },
 };
 

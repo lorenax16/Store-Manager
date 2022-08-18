@@ -8,13 +8,14 @@ const productsService = {
 
   getById: async (id) => {
     const products = await productsModel.getById(id);
+    console.log(products);
     return products;
   },
 
   add: async (name) => {
-    const newProducts = await productsModel.add(name);
-    return newProducts;
+    const newProduct = await productsModel.add(name);
+    return newProduct;
   },
 };
 
-module.exports = productsService;
+module.exports = productsService; 

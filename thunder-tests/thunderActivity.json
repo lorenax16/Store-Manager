@@ -4,11 +4,11 @@
     "colId": "history",
     "containerId": "",
     "name": "http://localhost:3000/products",
-    "url": "http://localhost:3000/products",
+    "url": "http://localhost:3000/sales/1",
     "method": "GET",
     "sortNum": 0,
     "created": "2022-08-16T13:22:44.559Z",
-    "modified": "2022-08-17T12:40:37.125Z",
+    "modified": "2022-08-18T13:59:15.749Z",
     "headers": [],
     "params": [],
     "tests": []
@@ -22,7 +22,7 @@
     "method": "POST",
     "sortNum": 0,
     "created": "2022-08-17T12:41:55.574Z",
-    "modified": "2022-08-17T12:50:34.962Z",
+    "modified": "2022-08-18T19:24:47.229Z",
     "headers": [],
     "params": [],
     "body": {
@@ -30,6 +30,53 @@
       "raw": "{\n  \"name\": \"viuda\"\n}",
       "form": []
     },
+    "tests": []
+  },
+  {
+    "_id": "5816e271-93e8-47af-bbe0-6b288a457880",
+    "colId": "history",
+    "containerId": "",
+    "name": "http://localhost:3000/sales",
+    "url": "http://localhost:3000/sales",
+    "method": "POST",
+    "sortNum": 0,
+    "created": "2022-08-18T14:18:27.915Z",
+    "modified": "2022-08-18T14:22:56.234Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": "[\n    {\n      \"nome\": hulk\n    },\n    {\n      \"nome\": thore\n    }\n]",
+      "form": []
+    },
+    "tests": []
+  },
+  {
+    "_id": "ad76e320-53fa-4613-84fb-b73f57da2363",
+    "colId": "history",
+    "containerId": "",
+    "name": "http://localhost:3000/sales",
+    "url": "http://localhost:3000/sales",
+    "method": "GET",
+    "sortNum": 0,
+    "created": "2022-08-18T14:57:57.685Z",
+    "modified": "2022-08-18T14:58:17.620Z",
+    "headers": [],
+    "params": [],
+    "tests": []
+  },
+  {
+    "_id": "be034d49-d036-46b1-be35-c7c92ab4c97f",
+    "colId": "history",
+    "containerId": "",
+    "name": "http://localhost:3000/products",
+    "url": "http://localhost:3000/products",
+    "method": "GET",
+    "sortNum": 0,
+    "created": "2022-08-18T17:15:40.536Z",
+    "modified": "2022-08-18T17:15:40.581Z",
+    "headers": [],
+    "params": [],
     "tests": []
   }
 ]

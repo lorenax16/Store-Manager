@@ -10,4 +10,4 @@ const validaNome = (req, res, next) => {
   next();
 };
 
-module.exports = validaNome;
+module.exports = validaNome; 

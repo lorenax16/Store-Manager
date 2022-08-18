@@ -9,4 +9,4 @@ productRoute.get('/', productsContoller.getAll);
 productRoute.get('/:id', productsContoller.getById);
 productRoute.post('/', validacoes, productsContoller.add);
 
-module.exports = productRoute;
+module.exports = productRoute; 

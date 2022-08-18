@@ -3,6 +3,7 @@ const { expect } = require("chai");
 // const connection = require("../../../models/connection");
 const productsServices = require('../../../services/productsService');
 const productsModel = require('../../../models/productsModel');
+const connection = require("../../../models/connection");
 
 describe('testando a Camada Service', () => {
   describe('todos as products no BD', () => {
@@ -14,7 +15,6 @@ describe('testando a Camada Service', () => {
 
     before(async () => {
       sinon.stub(productsModel, 'getAll').resolves([data]);
-      
     });
     after(async () => {
       productsModel.getAll.restore();
@@ -24,39 +24,40 @@ describe('testando a Camada Service', () => {
       const [result] = await productsServices.getAll();
       expect(result).to.be.deep.equal(data);
     });
+  });
 
-
-    describe('chamando o get buscando o id', () => {
-      const data1 =
-      {
+  describe('testando busqueda pelo id', () => {
+    it('quando a busqueda da certo', async () => {
+      sinon.restore();
+      sinon.stub(productsModel, 'getById').resolves({
         id: 1,
         name: "Martelo de Thor"
-      };
-      
-      before(async () => {
-        sinon.stub(productsModel, 'getById').resolves(data1);
       });
-
-      after(async () => {
-        productsModel.getById.restore();
-      })
-    })
-
-    it('testando busqueda pelo id', async () => {
       const result = await productsServices.getById(1);
-      // expect(result).to.be.equal(data1);
+      // console.log(result);
+      expect(result).to.be.a('object');
+      sinon.restore();
+    });
+  });
+
+  describe('quando criam um produto', () => {
+    before(() => {
+      sinon.stub(productsModel, 'add').resolves({ id: 1, name: 'pantera' })
     });
 
-    it('quando o id não existe', async () => {
-      const message = {
-        "message": "Product not found"
-      }
-      sinon.stub(productsModel, 'getById').resolves(message);
-      const result = await productsServices.getById(4);
+    after(() => {
+      productsModel.add.restore();
+    });
 
-      expect(result).to.have.key('message');
-      expect(result).to.be.a('object');
+    it('se cria um objeto', async () => {
+      const result = await productsServices.add();
+      expect(result).to.be.an('object');
+    });
+    it('o objeto não esteja vazio', async () => {
+      const result = await productsServices.add();
+      expect(result).to.not.empty;
+    });
 
-    })
   });
 });
+

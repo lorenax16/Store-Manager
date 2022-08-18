@@ -13,16 +13,17 @@ describe('testando a Camada model', () => {
     ]];
 
     before(async () => {
-      sinon.stub(connection, 'query').resolves(data);
+      sinon.stub(connection, 'execute').resolves(data);
     });
     after(async () => {
-      connection.query.restore();
+      connection.execute.restore();
     });
 
     it('retorna um array de produtos', async () => {
       const result = await productsModel.getAll();
       expect(result).to.be.an('array');
     });
+
   });
 
   describe('chamando o get no /products:id', () => {
@@ -30,11 +31,11 @@ describe('testando a Camada model', () => {
     const id = 1;
 
     before(async () => {
-      sinon.stub(connection, 'query').resolves(data);
+      sinon.stub(connection, 'execute').resolves(data);
     });
 
     after(async () => {
-      connection.query.restore();
+      connection.execute.restore();
     });
 
     it('retorna um objeto', async () => {
@@ -42,4 +43,23 @@ describe('testando a Camada model', () => {
       expect(result).to.be.an('object');
     })
   });
+
+  describe('adicionando produtos', () => {
+    describe('testando add', () => {
+      const data = [{ name: "Martelo de Thor" }];
+
+      before(async () => {
+        sinon.stub(connection, 'execute').resolves(data);
+      });
+      after(async () => {
+        connection.execute.restore();
+      });
+
+      it('retorna um objeto', async () => {
+        const response = await productsModel.add(data);
+
+        expect(response).to.be.a('object')
+      });
+    })
+  })
 })
