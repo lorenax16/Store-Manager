@@ -18,6 +18,14 @@ const productsContoller = {
     const newProduct = await productsService.add(name);
     return res.status(201).json(newProduct);
   },
+  edit: async (req, res) => {
+    const { id } = req.params;
+    const { name } = req.body;
+  
+    const resultado = await productsService.edit({ id, name });
+    if (!resultado) return res.status(404).json({ message: 'Product not found' });
+    return res.status(200).json({ id: Number(id), name });
+  },
   
   destroy: async (req, res) => {
     const { id } = req.params;
