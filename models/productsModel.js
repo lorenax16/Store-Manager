@@ -27,10 +27,13 @@ const getAllFuctions = {
     return result;
   },
 
-  // destroy: async (id) => {
-  //   connection.execute(`DELETE
-  //    FROM StoreManager.products WHERE id = ?;`, [id]);
-  // },
+  destroy: async (id) => {
+    const [result] = await connection.execute(
+      'DELETE FROM products WHERE id= ?;',
+      [id],
+    );
+    return result;
+  },
 };
 
 module.exports = getAllFuctions;

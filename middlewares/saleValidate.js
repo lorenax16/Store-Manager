@@ -24,13 +24,4 @@ const salesValite = (req, res, next) => {
   next();
 };
 
-const validId = async (req, res, next) => {
-  const { id } = req.params;
-  const result = await salesService.getById(id);
-  if (!result) {
-    return res.status(404).json({ message: 'Sale not found' });
-  }
-  next();
-};
-
-module.exports = { salesValite, validId };
+module.exports = salesValite;

@@ -10,6 +10,6 @@ productRoute.get('/', productsContoller.getAll);
 productRoute.get('/:id', productsContoller.getById);
 productRoute.put('/:id', validacoes, salesController.edit);
 productRoute.post('/', validacoes, productsContoller.add);
-// productRoute.delete('/:id', productsContoller.destroy);
+productRoute.delete('/:id', productsContoller.destroy);
 
 module.exports = productRoute; 

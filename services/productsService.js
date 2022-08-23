@@ -28,13 +28,10 @@ const productsService = {
     if (resultado.affectedRows === 0) return false;
     return true;
   },
-
-  // destoy: async (id) => {
-  //   const result = await productsModel.getById(id);
-  //   if (!result) return null;
-  //   await productsModel.destoy(id);
-  //   return { ...result };
-  // },
+  destroy: async (id) => {
+    await productsModel.destroy(id);
+    return true;
+  },
 };
 
 module.exports = productsService; 
