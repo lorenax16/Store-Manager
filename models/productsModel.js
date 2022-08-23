@@ -18,6 +18,19 @@ const getAllFuctions = {
       .execute('INSERT INTO StoreManager.products(name) VALUES (?);', [name]);
     return { id: result.insertId, name };
   },
+
+  edit: async ({ name, id }) => {
+    const [result] = await connection.execute(
+      'UPDATE StoreManager.products SET name = ? WHERE id = ?;',
+      [name, id],
+    );
+    return result;
+  },
+
+  // destroy: async (id) => {
+  //   connection.execute(`DELETE
+  //    FROM StoreManager.products WHERE id = ?;`, [id]);
+  // },
 };
 
 module.exports = getAllFuctions;

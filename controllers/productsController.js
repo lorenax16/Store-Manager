@@ -16,9 +16,15 @@ const productsContoller = {
   add: async (req, res) => {
     const { name } = req.body;
     const newProduct = await productsService.add(name);
-    console.log(newProduct);
     return res.status(201).json(newProduct);
   },
+
+  // destroy: async (req, res) => {
+  //   const { id } = req.params;
+  //   const result = await productsService.destroy(id);
+  //   if (!result) return res.status(404).json({ message: 'Product not found' });
+  //   return res.status(204).json(result);
+  // },
 };
 
 module.exports = productsContoller; 
