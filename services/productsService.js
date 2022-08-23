@@ -29,7 +29,8 @@ const productsService = {
     return true;
   },
   destroy: async (id) => {
-    await productsModel.destroy(id);
+    const resultado = await productsModel.destroy(id);
+    if (resultado.affectedRows === 0) return false;
     return true;
   },
 };

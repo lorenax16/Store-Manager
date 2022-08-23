@@ -1,6 +1,6 @@
 const salesModel = require('../models/salesModel');
-const productsModel = require('../models/productsModel');
-const CustomError = require('../error/customError');
+// const productsModel = require('../models/productsModel');
+// const CustomError = require('../error/customError');
 
 const salesService = {
   getAll: async () => {

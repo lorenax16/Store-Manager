@@ -1,6 +1,6 @@
 const express = require('express');
 const salesController = require('../controllers/salesController');
-// const { salesValite, validId } = require('../middlewares/saleValidate');
+// const { salesValite } = require('../middlewares/saleValidate');
 
 const salesRoute = express.Router();
 

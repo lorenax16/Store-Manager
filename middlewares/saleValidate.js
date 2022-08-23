@@ -1,4 +1,4 @@
-const salesService = require('../services/salesServices');
+// const salesService = require('../services/salesServices');
 
 const salesValite = (req, res, next) => {
   const sale = req.body;
