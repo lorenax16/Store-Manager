@@ -1,4 +1,3 @@
-const productsService = require('../services/productsService');
 const salesService = require('../services/salesServices');
 
 const salesController = {
